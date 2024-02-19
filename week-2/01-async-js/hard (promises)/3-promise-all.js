@@ -5,19 +5,22 @@
  */
 
 function wait1(t) {
-
+    const startTime = Date.now();
+    return new Promise(resolve =>  setTimeout(() => {resolve( Date.now() - startTime)}, t));
 }
 
 function wait2(t) {
-
+    const startTime = Date.now();
+    return new Promise(resolve =>  setTimeout(() => {resolve( Date.now() - startTime)}, t));
 }
 
 function wait3(t) {
-
+    const startTime = Date.now();
+    return new Promise(resolve =>  setTimeout(() => {resolve( Date.now() - startTime)}, t));
 }
 
 function calculateTime(t1, t2, t3) {
-
+    
 }
 
 module.exports = calculateTime;
