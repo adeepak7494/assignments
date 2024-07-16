@@ -17,8 +17,48 @@
 */
 
 class Calculator {
-  constructor(result) {
-    
+  constructor() {
+    this.result = 0;
+  }
+
+  add(num) {
+    this.result += num;
+  }
+
+  subract(num) {
+    this.result -= num;
+  }
+
+  multiply(num) {
+    this.result *= num;
+  }
+
+  divide(num) {
+    this.result /= num;
+  }
+
+  clear() {
+    this.result = 0;
+  }
+
+  getResult() {
+    return this.result;
+  }
+
+  calculate(expression) {
+    let updatedExpression = "";
+    for (let i = 0; i < expression.length; i++) {
+      if (expression[i].match(/[a-z]/i)) {
+        throw new Error();
+      }
+      if (expression[i] != " ") {
+        updatedExpression = updatedExpression + expression[i];
+      }
+    }
+    if (updatedExpression.includes("/0")) {
+      throw new Error();
+    }
+    this.result = eval(expression);
   }
 }
 

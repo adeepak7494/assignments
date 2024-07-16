@@ -9,7 +9,15 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
-    const startTime = Date.now();
-    
-    return 0.01;
+    const beforeDate = new Date();
+    const beforeTime = beforeDate.getTime();
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        sum += i;
+    }
+    const afterDate = new Date();
+    const afterTime = afterDate.getTime();
+    return (afterTime - beforeTime) / 1000;
 }
+
+console.log(calculateTime(100000));
