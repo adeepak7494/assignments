@@ -20,11 +20,12 @@ class Todo {
   }
 
   remove(index) {
-    this.todos.splice(index, 1);
+    if (index >= 0 && index < this.todos.length) this.todos.splice(index, 1);
   }
 
   update(index, updatedTodo) {
-    this.todos[index] = updatedTodo;
+    if (index >= 0 && index < this.todos.length)
+      this.todos[index] = updatedTodo;
   }
 
   getAll() {
@@ -32,7 +33,8 @@ class Todo {
   }
 
   get(index) {
-    return this.todos[index];
+    if (index >= 0 && index < this.todos.length) return this.todos[index];
+    else return null;
   }
 
   clear() {

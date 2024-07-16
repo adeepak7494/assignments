@@ -26,7 +26,7 @@ class Calculator {
   }
 
   subract(num) {
-    this.result -= num;
+    return (this.result = this.result - num);
   }
 
   multiply(num) {
@@ -34,7 +34,11 @@ class Calculator {
   }
 
   divide(num) {
-    this.result /= num;
+    if (number == 0) {
+      throw new Error();
+    } else {
+      this.result = this.result / number;
+    }
   }
 
   clear() {
